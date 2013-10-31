@@ -49,18 +49,18 @@ def show_cloudcast(cloudcast, options = {})
 end
 
 
-def show_section(section)
+def show_section(section, &block)
   track = Mixcloud::Track.new section.track_url
-  show_track track
+  show_track track, &block
 end
 
 
-def show_track(track)
+def show_track(track, &block)
   artist = Mixcloud::Artist.new track.artist_url
   full_track_name = track.name + " - " + artist.name
   puts "    - " + full_track_name
 
-  yield(track.name, artist.name) if block_given?
+  block.call(track.name, artist.name) if block
 
   puts ""
 end

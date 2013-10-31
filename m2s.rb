@@ -27,9 +27,11 @@ list_cloudcasts cloudcasts_url do |cloudcast|
   if cloudcast_name_regexp.match cloudcast.name
     show_cloudcast cloudcast, { bg: :green } do |section|
       show_section section do |track_name, artist_name|
-        find_spotify_track(track.name, artist.name)
+        find_spotify_track(track_name, artist_name)
       end
     end
+
+    exit
 
   else
     show_cloudcast cloudcast do |section|
