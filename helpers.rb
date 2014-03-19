@@ -73,10 +73,7 @@ def find_spotify_track(track_name, artist_name, cloudcast_name)
     result = results[:tracks][0]
     artists = result.artists.map{ |a| a.name }.join(", ")
     puts "        > " + result.name + " - " +  artists + " -- " + result.uri.color(:green)
-    begin
-      File.open("#{cloudcast_name}.txt", 'a') { |file| file.write("#{result.uri}\n") }
-    rescue Errno::ENOENT
-      File.open("#{cloudcast_name}.txt", 'w') { |file| file.write("#{result.uri}\n") }
-    end
+    mode = File.file?("#{cloudcast_name}.txt") ? "a" : "w"
+    File.open("#{cloudcast_name}.txt", mode) { |file| file.write("#{result.uri}\n") }
   end
 end
