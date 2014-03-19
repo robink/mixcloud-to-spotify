@@ -17,7 +17,7 @@ def find_user(user_name)
 end
 
 
-# list all cloucasts for a given cloudcasts url endpoint
+# list all cloudcasts for a given cloudcasts url endpoint
 def list_cloudcasts(cloudcasts_url, breaker = nil)
   begin
     cloudcasts_result = JSON.parse(RestClient.get cloudcasts_url)
@@ -66,12 +66,17 @@ def show_track(track, &block)
 end
 
 
-def find_spotify_track(track_name, artist_name)
+def find_spotify_track(track_name, artist_name, cloudcast_name)
   results = MetaSpotify::Track.search track_name + " " + artist_name
 
   if results[:tracks].length > 0
     result = results[:tracks][0]
     artists = result.artists.map{ |a| a.name }.join(", ")
     puts "        > " + result.name + " - " +  artists + " -- " + result.uri.color(:green)
+    begin
+      File.open("#{cloudcast_name}.txt", 'a') { |file| file.write("#{result.uri}\n") }
+    rescue Errno::ENOENT
+      File.open("#{cloudcast_name}.txt", 'w') { |file| file.write("#{result.uri}\n") }
+    end
   end
 end
