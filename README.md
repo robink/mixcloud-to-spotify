@@ -1,11 +1,15 @@
 Mixcloud to Spotify
 ===================
 
-Just a simple script to search for a specific mixcloud cloudcast, crawl it and find associated tracks on Spotify.
+Just a simple script that crawls tracks on Spotify from a Mixcloud cloudcast tracklist.
 
-Current version now skips any cloudcasts that don't match the one you're searching for and writes a txt file with Spotify URLs for all matches that you can quickly select all, copy and paste directly into Spotify play queue.
+All Spotify URIs are written on a txt file so that you can copy and paste directly into Spotify play queue.
 
-Usage: 
+### Install
+
+Get Ruby (tested only with Ruby > 2.0) and run `bundle install`
+
+### Usage
 
 `ruby m2s.rb`
 
