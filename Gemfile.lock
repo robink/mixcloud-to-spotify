@@ -1,19 +1,19 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    highline (1.6.18)
-    httparty (0.12.0)
+    highline (1.6.21)
+    httparty (0.13.1)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     json (1.8.1)
-    meta-spotify (0.3.1)
+    meta-spotify (0.3.3)
       httparty (> 0.8)
-    mime-types (2.0)
+    mime-types (2.2)
     mixcloud (1.0.0)
       json (>= 1.6.1)
       rest-client (>= 1.6.7)
     multi_xml (0.5.5)
-    rainbow (1.1.4)
+    rainbow (2.0.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
 

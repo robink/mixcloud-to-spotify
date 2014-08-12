@@ -11,11 +11,11 @@ cloudcast_name = ask("Cloudcast name?") { |q| q.default = "504" }
 
 # get the user on mixcloud
 user = find_user user_name
-puts "User " + user_name.color(:green) + " found. " + user.cloudcast_count.to_s.color(:green) + " cloudcasts."
+puts "User #{Rainbow(user_name).color(:green)} found. #{Rainbow(user.cloudcast_count).color(:green)} cloudcasts."
 
 cloudcasts_url = user.cloudcasts_url
 
-puts cloudcasts_url.color(:yellow)
+puts "#{Rainbow(cloudcasts_url).color(:yellow)}"
 
 puts ""
 puts "Lookup for a cloudcast :"
