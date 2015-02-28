@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/robink/mixcloud.git
+  revision: 2bd1025ad18bd459b2199658cb5ca4c485222dd4
+  specs:
+    mixcloud (1.0.0)
+      json (>= 1.6.1)
+      rest-client (>= 1.6.7)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -8,14 +16,13 @@ GEM
     json (1.8.1)
     meta-spotify (0.3.3)
       httparty (> 0.8)
-    mime-types (2.2)
-    mixcloud (1.0.0)
-      json (>= 1.6.1)
-      rest-client (>= 1.6.7)
+    mime-types (2.4.3)
     multi_xml (0.5.5)
+    netrc (0.10.3)
     rainbow (2.0.0)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
+    rest-client (1.7.3)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
 
 PLATFORMS
   ruby
@@ -23,5 +30,5 @@ PLATFORMS
 DEPENDENCIES
   highline
   meta-spotify
-  mixcloud
+  mixcloud!
   rainbow
