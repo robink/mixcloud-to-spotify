@@ -99,5 +99,7 @@ def sanitize(string)
   string = string.gsub(" ft ", " ")
   string = string.gsub(" & ", " ")
   string = string.gsub(" x ", " ")
+  string = string.gsub(" (", " ")
+  string = string.gsub(")", " ")
   string
 end
